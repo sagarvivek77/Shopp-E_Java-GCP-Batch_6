@@ -1,0 +1,34 @@
+<section class="vh-200 gradient-custom">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-20 col-md-50 col-lg- col-xl-5">
+      <div class="card bg-dark text-white" style="border-radius: 1rem;">
+        <div class="card-body p-6 text-center">
+          <div class="mb-md-5 mt-md-4 pb-5">
+            <div class="container col-lg-10">
+              <h1 class="text-center" style="color: #0fb9b4;">User Login</h1>
+              <div class="card">
+                <div class="card-body">
+                  <form class="form-group" ngNativeValidate>
+                    <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+                    <div class="alert alert-success" *ngIf='loginSuccess'>{{successMessage}}</div>
+                    <div class="form-group">
+                      <label for="email">User Name :</label>
+                      <input type="text" class="form-control" id="username" [(ngModel)]="username" placeholder="Enter User Name"
+                        name="username" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="pwd">Password:</label>
+                      <input type="password" class="form-control" [(ngModel)]="password" id="password" placeholder="Enter password"
+                        name="password" required>
+                    </div>
+                    <br>
+                    <button (click)="checkLogin(username)" style="background-color: #0fb9b4;" class="btn btn-success">Login</button>
+                    <br>
+                    <label>Not Registered ?</label>
+                    <br>
+                    <button (click)="userRegister()" style="background-color: #0fb9b4;" class="btn btn-success">Register</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          
